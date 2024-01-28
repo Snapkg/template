@@ -12,3 +12,5 @@ if(validate(jsonData)) {
 } else {
   console.log('Invalid JSON: ', validate.errors);
 }
+
+console.log('done');
