@@ -1,7 +1,7 @@
 {
   "schema": 0.2,
   "name": "<package-name>",
-  "version": "100",
+  "version": 0.1,
   "issues": "https://github.com/Snapkg/<package-name>/issues",
   "authors": {
     "maintainers": [
