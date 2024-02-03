@@ -2,3 +2,7 @@
 	path = testing
 	url = https://github.com/Snapkg/testing.git
 	branch = master
+[submodule ".github/workflows"]
+	path = .github/workflows
+	url = https://github.com/Snapkg/workflows
+	branch = main
