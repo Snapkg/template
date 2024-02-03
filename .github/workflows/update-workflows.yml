@@ -10,11 +10,13 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+      actions: write
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
         with:
           path: 'repo'
+          token: ${{ secrets.ORG_ADMIN_TOKEN }}
       - name: Checkout template
         uses: actions/checkout@v4
         with:
@@ -26,6 +28,6 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "Synced workflows from template repo"
-          repository: 'repo'
+          repository: './repo'
       - name: test
         run: "ls ./repo/.github/workflows"
