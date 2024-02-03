@@ -19,6 +19,6 @@ jobs:
           repository: 'Snapkg/template'
           path: 'template'
       - name: Update workflows
-        run: "mkdir -p ./repo/.github/workflows cp -rf ./template/.github/workflows ./repo/.github/workflows"
+        run: "mkdir -p ./repo/.github/workflows && cp -rf ./template/.github/workflows ./repo/.github/workflows"
       - name: test
         run: "ls ./repo/.github/workflows"
