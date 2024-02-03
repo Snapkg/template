@@ -1,6 +1,6 @@
 # Updates workflows from the "template" repo.
 
-name: Update workflows
+name: Sync workflows
 
 on:
   workflow_dispatch: ~
@@ -8,6 +8,8 @@ on:
 jobs:
   update-workflows:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
@@ -20,5 +22,8 @@ jobs:
           path: 'template'
       - name: Update workflows
         run: "mkdir -p ./repo/.github/workflows && cp -rf ./template/.github/workflows ./repo/.github/workflows"
-      - name: test
-        run: "ls ./repo/.github/workflows"
+      - name: Commit and push changes
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Synced workflows from template repo"
+          repository: 'repo'
