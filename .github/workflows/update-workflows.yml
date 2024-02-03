@@ -1,0 +1,20 @@
+# Updates workflows from the "template" repo.
+
+name: Update workflows
+
+on:
+  workflow_dispatch: ~
+
+jobs:
+  update-workflows:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+      - name: Checkout template
+        uses: actions/checkout@v4
+        with:
+          repository: 'Snapkg/template'
+          path: 'template'
+      - name: test
+        run: "ls"
